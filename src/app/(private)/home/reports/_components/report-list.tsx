@@ -20,7 +20,7 @@ export default function ReportList({ reports, currentPage, onPageChange, itemsPe
         {reports?.map((report) => (
           <ReportCard key={report.reportNumber} report={report} />
         ))}
-        {reports?.length === 0 && <p className="text-center text-gray-500">No reports found.</p>}
+        {reports?.length === 0 && <p className="text-center text-gray-500">Nenhum R.O encontrado!</p>}
       </div>
       <Pagination
         lastPage={totalPages}

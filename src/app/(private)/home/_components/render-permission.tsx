@@ -14,8 +14,8 @@ export function RenderPermission({ user, officerPhone, role, children }: RenderP
 
   const isCurrentUserEditingItSelf = user.phone === officerPhone;
   
-  const hasUserPermission = permissions[role] <= permissions[user.internalRole];
-  const hasPermission = hasUserPermission || isCurrentUserEditingItSelf;
+  const hasRolePermission = permissions[role] <= permissions[user.internalRole];
+  const hasPermission = hasRolePermission || isCurrentUserEditingItSelf;
 
   return hasPermission ? children : null
 }

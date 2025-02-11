@@ -22,17 +22,19 @@ export function OfficerCard({ officer }: { officer: Officer }) {
             <span className="font-mono text-muted-foreground">{officer.internalRole}</span>
           </div>
         </CardTitle>
-        <RenderPermission user={currentUser} role={PilotRank.SUB_COMMAND} officerPhone={officer.phone} >
-          <OfficerModal officer={officer}>
-            <Button variant="ghost" size="icon">
-              <Pencil className="h-4 w-4" />
-              <span className="sr-only">Edit</span>
-            </Button>
-          </OfficerModal>
-        </RenderPermission>
-        <RenderPermission user={currentUser} role={PilotRank.SUB_COMMAND}>
-          <DeleteOfficer officer={officer} />
-        </RenderPermission>
+        <div className='flex items-center gap-2'>
+          <RenderPermission user={currentUser} role={PilotRank.SUB_COMMAND} officerPhone={officer.phone} >
+            <OfficerModal officer={officer}>
+              <Button variant="ghost" size="icon">
+                <Pencil className="h-4 w-4" />
+                <span className="sr-only">Edit</span>
+              </Button>
+            </OfficerModal>
+          </RenderPermission>
+          <RenderPermission user={currentUser} role={PilotRank.SUB_COMMAND}>
+            <DeleteOfficer officer={officer} />
+          </RenderPermission>
+        </div>
       </CardHeader>
       <CardContent>
         <p>
