@@ -15,7 +15,9 @@ export const authConfigs: NextAuthOptions = {
       async authorize(credentials) {
         const res = await api.post<AuthResponse>('/auth/sign-in', credentials)
 
-        if(!res) return null
+        if (!res || !res.data || !res.data.user) {
+          return null;
+        }
 
         return { ...res.data, id: res.data.user.id }
       },
