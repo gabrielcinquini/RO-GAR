@@ -7,7 +7,7 @@ import { OfficerModal } from './officer-modal'
 import { DeleteOfficer } from './delete-officer'
 import { RenderPermission } from '../../_components'
 import { useSession } from 'next-auth/react'
-import { PilotRank } from '@/shared/types'
+import { PilotRank, pilotRankTranslations } from '@/shared/types'
 
 export function OfficerCard({ officer }: { officer: Officer }) {
   const session = useSession();
@@ -19,7 +19,7 @@ export function OfficerCard({ officer }: { officer: Officer }) {
         <CardTitle className="text-xl font-bold">
           <div className='flex flex-col'>
             <span>{officer.fullName}</span>
-            <span className="font-mono text-muted-foreground">{officer.internalRole}</span>
+            <span className="font-mono text-muted-foreground">{pilotRankTranslations[officer.internalRole]}</span>
           </div>
         </CardTitle>
         <div className='flex items-center gap-2'>

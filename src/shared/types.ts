@@ -15,6 +15,16 @@ export enum PilotRank {
   COMMAND = 'COMMAND',
 }
 
+export const pilotRankTranslations = {
+  PROBATIONARY_PILOT: 'Piloto Probatório',
+  PILOT: 'Piloto',
+  EXPERIENCED_PILOT: 'Piloto Experiente',
+  SENIOR_PILOT: 'Piloto Sênior',
+  VETERAN_PILOT: 'Piloto Veterano',
+  SUB_COMMAND: 'Subcomando',
+  COMMAND: 'Comando',
+};
+
 export type AuthResponse = {
   user: User;
   accessToken: string;

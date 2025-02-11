@@ -5,7 +5,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Officer, useCreateOfficer, useUpdateOfficer } from "@/hooks";
-import { PilotRank } from "@/shared/types";
+import { PilotRank, pilotRankTranslations } from "@/shared/types";
 import { SignUpFormType, signUpForm } from "@/validations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader } from "lucide-react";
@@ -114,7 +114,7 @@ export function CreateOfficerModalForm({ officer, onClose }: ReportModalProps) {
                   </FormControl>
                   <SelectContent>
                     {Object.values(PilotRank).map(rank => (
-                      <SelectItem key={rank} value={rank}>{rank}</SelectItem>
+                      <SelectItem key={rank} value={rank}>{pilotRankTranslations[rank]}</SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
